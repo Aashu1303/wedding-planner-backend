@@ -1,15 +1,15 @@
 {
   "files": {
-    "main.css": "/static/css/main.bc188e8b.css",
-    "main.js": "/static/js/main.bb7f14c4.js",
-    "static/media/abg.jpeg": "/static/media/abg.9d869e3214bc07daec0b.jpeg",
-    "static/media/homebg.jpeg": "/static/media/homebg.8bac506c6c3ac9a2db3b.jpeg",
-    "index.html": "/index.html",
-    "main.bc188e8b.css.map": "/static/css/main.bc188e8b.css.map",
-    "main.bb7f14c4.js.map": "/static/js/main.bb7f14c4.js.map"
+    "main.css": "/wedding-planner-backend/static/css/main.edb90187.css",
+    "main.js": "/wedding-planner-backend/static/js/main.bb7f14c4.js",
+    "static/media/abg.jpeg": "/wedding-planner-backend/static/media/abg.9d869e3214bc07daec0b.jpeg",
+    "static/media/homebg.jpeg": "/wedding-planner-backend/static/media/homebg.8bac506c6c3ac9a2db3b.jpeg",
+    "index.html": "/wedding-planner-backend/index.html",
+    "main.edb90187.css.map": "/wedding-planner-backend/static/css/main.edb90187.css.map",
+    "main.bb7f14c4.js.map": "/wedding-planner-backend/static/js/main.bb7f14c4.js.map"
   },
   "entrypoints": [
-    "static/css/main.bc188e8b.css",
+    "static/css/main.edb90187.css",
     "static/js/main.bb7f14c4.js"
   ]
 }
