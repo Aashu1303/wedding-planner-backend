@@ -29,7 +29,12 @@ mongoose.connection.on("disconnected", () => {
     console.log("Mongo Disconnected.")
 })
 
-app.use(cors())
+const corsOptions = {
+  origin: 'https://taupe-wisp-a4c957.netlify.app',
+  optionsSuccessStatus: 200, // some legacy browsers (IE11, various SmartTVs) choke on 204
+};
+
+app.use(cors(corsOptions));
 app.use(cookieParser())
 app.use(express.json())
 
