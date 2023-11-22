@@ -9,7 +9,7 @@ import contactRoute from "./routes/contact.js"
 import confirmbRoute from "./routes/confirmb.js"
 import cookieParser from "cookie-parser"
 import cors from "cors"
-
+const PORT = process.env.PORT || 8080
 const app = express()
 dotenv.config()
 
@@ -17,7 +17,7 @@ dotenv.config()
 const connect = async () => {
     try {
         await mongoose.connect(process.env.MONGO_URI);
-        console.log("connected to mongoDb.")
+        console.log("Connected to MongoDb.")
     }
     catch (error) {
         throw error
@@ -26,7 +26,7 @@ const connect = async () => {
 };
 
 mongoose.connection.on("disconnected", () => {
-    console.log("mongo disconnected")
+    console.log("Mongo Disconnected.")
 })
 
 app.use(cors())
@@ -51,8 +51,8 @@ app.use((err, req, res, next) => {
     });
 });
 
-app.listen(8080, listen => {
+app.listen(PORT, listen => {
     connect()
-    console.log('connected to server..')
+    console.log('Connected to server..')
 })
 
