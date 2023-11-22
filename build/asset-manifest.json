@@ -1,0 +1,15 @@
+{
+  "files": {
+    "main.css": "/wedding-planner-backend/static/css/main.edb90187.css",
+    "main.js": "/wedding-planner-backend/static/js/main.bb7f14c4.js",
+    "static/media/abg.jpeg": "/wedding-planner-backend/static/media/abg.9d869e3214bc07daec0b.jpeg",
+    "static/media/homebg.jpeg": "/wedding-planner-backend/static/media/homebg.8bac506c6c3ac9a2db3b.jpeg",
+    "index.html": "/wedding-planner-backend/index.html",
+    "main.edb90187.css.map": "/wedding-planner-backend/static/css/main.edb90187.css.map",
+    "main.bb7f14c4.js.map": "/wedding-planner-backend/static/js/main.bb7f14c4.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.edb90187.css",
+    "static/js/main.bb7f14c4.js"
+  ]
+}
