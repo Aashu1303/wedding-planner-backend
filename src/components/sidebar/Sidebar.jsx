@@ -21,14 +21,14 @@ const Sidebar = () => {
     <div className="sidebar">
       <div className="top">
         <Link to="/users" style={{ textDecoration: "none" }}>
-          <span className="logo">GOODDEEDS ADMIN</span>
+          <span className="logo">Wedding-Planner ADMIN</span>
         </Link>
       </div>
       <hr />
       <div className="center">
         <ul>
-          
-          
+
+
           <p className="title">LISTS</p>
           <Link to="/users" style={{ textDecoration: "none" }}>
             <li>
@@ -43,24 +43,24 @@ const Sidebar = () => {
             </li>
           </Link>
           <Link to="/slots" style={{ textDecoration: "none" }}>
-          <li>
-            <CreditCardIcon className="icon" />
-            <span>Slots</span>
-          </li>
+            <li>
+              <CreditCardIcon className="icon" />
+              <span>Slots</span>
+            </li>
           </Link>
           <Link to="/contact" style={{ textDecoration: "none" }}>
-          <li>
-            <PhoneIcon className="icon" />
-            <span>Contacts</span>
-          </li>
+            <li>
+              <PhoneIcon className="icon" />
+              <span>Contacts</span>
+            </li>
           </Link>
-          
-          
-          
-          
+
+
+
+
         </ul>
       </div>
-      
+
     </div>
   );
 };

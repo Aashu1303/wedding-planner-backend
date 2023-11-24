@@ -6,46 +6,54 @@ import { useState } from "react";
 import useFetch from "../../hooks/useFetch";
 import { useEffect } from "react";
 import axios from "axios";
+import { Navigate, useNavigate } from 'react-router-dom'
 
 
-const Datatable = ({columns}) => {
-  const location=useLocation();
-  const path=location.pathname.split("/")[1];
-  const [list,setList]=useState([]);
-  const {data,loading,error}=useFetch(`/${path}`)
+const Datatable = ({ columns }) => {
+  const location = useLocation();
+  const path = location.pathname.split("/")[1];
+  const [list, setList] = useState([]);
+  const { data, loading, error } = useFetch(`/${path}`)
+  const navigate = useNavigate();
 
-  useEffect(()=>{
+  useEffect(() => {
     setList(data)
-  },[data])
+  }, [data])
 
   const handleDelete = async (id) => {
-    try{
+    try {
       await axios.delete(`/${path}/${id}`);
       setList(list.filter((item) => item._id !== id));
 
-    }catch(err){}
+    } catch (err) { }
   };
+
 
   const actionColumn = [
     {
       field: "action",
       headerName: "Action",
-      width: 200,
+      width: 300, // Increased width to accommodate two buttons
       renderCell: (params) => {
+        console.log(params);
         return (
           <div className="cellAction">
-            
             <div
               className="deleteButton"
               onClick={() => handleDelete(params.row._id)}
             >
               Delete
             </div>
-          </div>
+            <Link to={`/${path}/${params.row._id}/update`} className="updateButton">
+              Update
+
+            </Link>
+          </div >
         );
       },
     },
   ];
+
   return (
     <div className="datatable">
       <div className="datatableTitle">
@@ -62,7 +70,7 @@ const Datatable = ({columns}) => {
         rowsPerPageOptions={[9]}
         rowHeight={100}
         checkboxSelection
-        getRowId={row=>row._id}
+        getRowId={(row) => row._id}
       />
     </div>
   );

@@ -35,6 +35,43 @@ export const userInputs = [
     placeholder: "Karimnagar",
   },
 ];
+export const userUpdate = [
+  {
+    id: "username",
+    label: "Username",
+    type: "text",
+    placeholder: "Ramu",
+  },
+  {
+    id: "email",
+    label: "Email",
+    type: "email",
+    placeholder: "ramu@gmail.com",
+  },
+  {
+    id: "phone",
+    label: "Phone",
+    type: "text",
+    placeholder: "9032762368",
+  },
+  {
+    id: "password",
+    label: "Password",
+    type: "password",
+  },
+  {
+    id: "country",
+    label: "Country",
+    type: "text",
+    placeholder: "India",
+  },
+  {
+    id: "city",
+    label: "City",
+    type: "text",
+    placeholder: "Karimnagar",
+  },
+];
 
 export const productInputs = [
   {

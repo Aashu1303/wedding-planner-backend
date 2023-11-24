@@ -1,8 +1,8 @@
+import React from "react";
 import axios from "axios";
 import { useContext, useState } from "react";
 import { NavLink, useNavigate } from "react-router-dom";
 import { AuthContext } from "../../context/AuthContext";
-//import { AuthContext } from "../context/AuthContext";
 import "./login.scss";
 
 const Login = () => {
@@ -12,78 +12,62 @@ const Login = () => {
   });
 
   const { loading, error, dispatch } = useContext(AuthContext);
-
   const navigate = useNavigate();
 
-  //   Handle Change Function
   const handleChange = (e) => {
     setCredentials((prev) => ({ ...prev, [e.target.id]: e.target.value }));
   };
 
-  //   Handle Click Function
   const handleClick = async (e) => {
     e.preventDefault();
     dispatch({ type: "LOGIN_START" });
+
     try {
-      const res = await axios.post(
-        "/auth/login",
-        credentials
-      );
+      const res = await axios.post("/auth/login", credentials);
+
       if (res.data.isAdmin) {
         dispatch({ type: "LOGIN_SUCCESS", payload: res.data.details });
         navigate("/");
       } else {
-        dispatch({ type: "LOGIN_FAILURE", payload: { message: "You are not admin" } });
+        dispatch({
+          type: "LOGIN_FAILURE",
+          payload: { message: "You are not an admin" },
+        });
       }
-
     } catch (error) {
       dispatch({ type: "LOGIN_FAILURE", payload: error.response.data });
     }
   };
+
   return (
-    <div className="mainContainer">
-      <div className="contentArea">
-        <div className="right">
-          <h1>Sign in your account!</h1>
-          <p>Login with your personal details for continue</p>
+    <div className="login-container">
+      <div className="login-form-container">
+        <div className="login-form">
+          <h1>Admin</h1>
+
           <form>
             <input
-              style={{
-                width: "100%",
-                padding: "15px",
-                border: "none",
-                outline: "none",
-                backgroundColor: "#ddd",
-                borderRadius: "5px",
-              }}
+              className="login-input"
               type="text"
               placeholder="Username"
               id="username"
               onChange={handleChange}
             />
+
             <input
-              style={{
-                width: "100%",
-                padding: "15px",
-                border: "none",
-                outline: "none",
-                backgroundColor: "#ddd",
-                borderRadius: "5px",
-              }}
+              className="login-input"
               type="password"
               placeholder="Password"
               id="password"
               onChange={handleChange}
             />
-            <button disabled={loading} onClick={handleClick}>
+
+            <button className="login-button" disabled={loading} onClick={handleClick}>
               Login
             </button>
-            {error && <span>{error.message}</span>}
+
+            {error && <span className="error-message">{error.message}</span>}
           </form>
-        </div>
-        <div className="left">
-          <h1>Welcome Back!</h1>
-          <p>to continue please login with your personal account information</p>
         </div>
       </div>
     </div>

@@ -71,7 +71,14 @@
       padding: 2px 5px;
       border-radius: 5px;
       color: crimson;
-      border: 1px dotted rgba(220, 20, 60, 0.6);
+      border: 2px solid rgba(220, 20, 60, 0.6);
+      cursor: pointer;
+    }
+    .updateButton {
+      padding: 2px 5px;
+      border-radius: 5px;
+      color: rgb(24, 27, 24);
+      border: 2px solid rgba(5, 113, 44, 0.6);
       cursor: pointer;
     }
   }
